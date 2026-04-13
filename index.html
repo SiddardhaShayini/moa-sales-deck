@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mall of America | The Destination</title>
+  <meta name="description" content="5.6M sq ft. 40M visitors. The largest mall in North America — for retail tenants, sponsors, and event partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <button class="nav-logo" onclick="scrollTo('hero')">
+      <span class="logo-moa">MOA</span>
+      <span class="logo-divider"></span>
+      <span class="logo-sub">Mall of America</span>
+    </button>
+    <div class="nav-links">
+      <button class="nav-link" data-section="why" onclick="scrollTo('why')">Why MOA</button>
+      <button class="nav-link" data-section="retail" onclick="scrollTo('retail')">Retail</button>
+      <button class="nav-link" data-section="luxury" onclick="scrollTo('luxury')">Luxury</button>
+      <button class="nav-link" data-section="dining" onclick="scrollTo('dining')">Dining</button>
+      <button class="nav-link" data-section="entertainment" onclick="scrollTo('entertainment')">Entertainment</button>
+      <button class="nav-link" data-section="events" onclick="scrollTo('events')">Events</button>
+      <button class="nav-link" data-section="leasing" onclick="scrollTo('leasing')">Leasing</button>
+      <button class="nav-cta" onclick="scrollTo('contact')">Partner With Us</button>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="scrollTo('why')">Why MOA</button>
+    <button onclick="scrollTo('retail')">Retail</button>
+    <button onclick="scrollTo('luxury')">Luxury</button>
+    <button onclick="scrollTo('dining')">Dining</button>
+    <button onclick="scrollTo('entertainment')">Entertainment</button>
+    <button onclick="scrollTo('events')">Events</button>
+    <button onclick="scrollTo('leasing')">Leasing</button>
+    <button onclick="scrollTo('contact')">Partner With Us</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO — CINEMATIC VIDEO
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <!-- Video background — uses a free Pexels embed that loads reliably -->
+  <div class="hero-video-wrap">
+    <video
+      id="heroVideo"
+      autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80"
+    >
+      <source src="https://www.pexels.com/download/video/3015478/" type="video/mp4" />
+    </video>
+    <div class="hero-grain"></div>
+    <div class="hero-vignette"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-animate="fade-up" data-delay="0">
+      <span class="eyebrow-line"></span>
+      <span>Bloomington, Minnesota · Est. 1992</span>
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 data-animate="fade-up" data-delay="150">
+      <span class="h1-line">More Than</span>
+      <span class="h1-line h1-italic">a Mall.</span>
+      <span class="h1-line h1-gold">A Destination.</span>
+    </h1>
+    <p class="hero-sub" data-animate="fade-up" data-delay="350">
+      5.6 million square feet. 40 million visitors. The largest commercial property in North America — and the most powerful stage your brand will ever stand on.
+    </p>
+    <div class="hero-actions" data-animate="fade-up" data-delay="500">
+      <button class="btn-primary" onclick="scrollTo('contact')">Become a Partner</button>
+      <button class="btn-ghost" onclick="scrollTo('why')">
+        <span>Explore the Property</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Animated scroll cue -->
+  <div class="hero-scroll" onclick="scrollTo('why')">
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    <span>Scroll</span>
+  </div>
+
+  <!-- Floating stats bar -->
+  <div class="hero-stats" data-animate="fade-up" data-delay="700">
+    <div class="hstat"><span class="hstat-n">5.6M</span><span class="hstat-l">Sq Ft</span></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span class="hstat-n">520+</span><span class="hstat-l">Stores</span></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span class="hstat-n">40M+</span><span class="hstat-l">Annual Visitors</span></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span class="hstat-n">400+</span><span class="hstat-l">Events / Year</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY MOA
+═══════════════════════════════════════════ -->
+<section id="why" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why Mall of America</p>
+      <h2>The Numbers <em>Speak</em></h2>
+      <p class="section-desc">No property in North America delivers this combination of scale, traffic, and cultural gravity. This isn't retail real estate — it's a platform.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-big reveal">
+        <img src="assets/mall-interior.jpg" alt="Mall interior" loading="lazy" />
+        <div class="why-big-overlay">
+          <p class="why-big-stat">7×</p>
+          <p class="why-big-label">Yankee Stadiums of floor space</p>
+        </div>
+      </div>
+      <div class="why-cards">
+        <div class="why-card reveal">
+          <div class="wc-icon">📍</div>
+          <h3>Prime Location</h3>
+          <p>Minutes from MSP International Airport. At the crossroads of I-494 and I-35W. Direct light rail access from downtown Minneapolis.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="wc-icon">🌍</div>
+          <h3>Global Draw</h3>
+          <p>Visitors from all 50 states and 100+ countries. 30% of foot traffic is tourists — out-of-state and international buyers with higher spend per visit.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="wc-icon">📅</div>
+          <h3>Year-Round Traffic</h3>
+          <p>400+ events annually. No seasonality. No slow periods. The enclosed structure means full foot traffic in January just as in July.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="wc-icon">🏙️</div>
+          <h3>Its Own Zip Code</h3>
+          <p>The property is so large it has its own postal code. 4 anchor stores, 3 full floors, and a 7-acre indoor theme park at its core.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demographics bar -->
+    <div class="demo-bar reveal">
+      <div class="demo-item">
+        <span class="demo-n">68%</span>
+        <span class="demo-l">Female visitors</span>
+      </div>
+      <div class="demo-sep"></div>
+      <div class="demo-item">
+        <span class="demo-n">35</span>
+        <span class="demo-l">Median age</span>
+      </div>
+      <div class="demo-sep"></div>
+      <div class="demo-item">
+        <span class="demo-n">$89K</span>
+        <span class="demo-l">Median HH income</span>
+      </div>
+      <div class="demo-sep"></div>
+      <div class="demo-item">
+        <span class="demo-n">3.4hr</span>
+        <span class="demo-l">Avg dwell time</span>
+      </div>
+      <div class="demo-sep"></div>
+      <div class="demo-item">
+        <span class="demo-n">30%</span>
+        <span class="demo-l">Out-of-state visitors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     RETAIL
+═══════════════════════════════════════════ -->
+<section id="retail" class="section-pad alt-bg">
+  <div class="container">
+    <div class="split-layout">
+      <div class="split-text reveal-left">
+        <p class="eyebrow">Retail Experience</p>
+        <h2>World-Class <em>Retail</em></h2>
+        <p class="section-desc">520+ stores spanning every tier — from global flagships to emerging indie concepts. Nordstrom, Macy's, and hundreds of specialty retailers, with rotating pop-up concepts that keep the experience perpetually fresh.</p>
+        <div class="pill-row">
+          <span class="pill">Flagship</span>
+          <span class="pill">Fashion</span>
+          <span class="pill">Beauty</span>
+          <span class="pill">Lifestyle</span>
+          <span class="pill">Pop-Up</span>
+          <span class="pill">Specialty</span>
+        </div>
+        <div class="split-metrics">
+          <div class="sm-item">
+            <span class="sm-n">520+</span>
+            <span class="sm-l">Total stores</span>
+          </div>
+          <div class="sm-item">
+            <span class="sm-n">4</span>
+            <span class="sm-l">Anchor tenants</span>
+          </div>
+          <div class="sm-item">
+            <span class="sm-n">3</span>
+            <span class="sm-l">Full floors</span>
+          </div>
+        </div>
+      </div>
+      <div class="split-image reveal-right">
+        <div class="img-frame">
+          <img src="assets/luxury-retail-interior.jpg" alt="Luxury retail interior" loading="lazy" />
+          <div class="img-badge">
+            <span>New</span>
+            <p>Pop-Up spaces from 500 sq ft</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LUXURY
+═══════════════════════════════════════════ -->
+<section id="luxury" class="section-pad luxury-section">
+  <div class="luxury-bg">
+    <img src="assets/luxury-fashion.jpg" alt="Luxury fashion" loading="lazy" />
+    <div class="luxury-overlay"></div>
+  </div>
+  <div class="container luxury-content">
+    <div class="luxury-inner reveal">
+      <p class="eyebrow eyebrow-light">Luxury Wing</p>
+      <h2 class="luxury-h2">Elevated. <em>Distinct.</em><br>Unapologetically Premium.</h2>
+      <p class="luxury-desc">The luxury corridor at Mall of America is in a class of its own. Curated adjacencies, elevated finishes, and a clientele that arrives with intent to spend. A placement here isn't just retail — it's brand positioning at scale.</p>
+      <div class="luxury-brands">
+        <div class="lb-item">Coach</div>
+        <div class="lb-item">Tiffany & Co.</div>
+        <div class="lb-item">Louis Vuitton</div>
+        <div class="lb-item">Rolex</div>
+        <div class="lb-item">Burberry</div>
+        <div class="lb-item">Hugo Boss</div>
+      </div>
+      <button class="btn-gold" onclick="scrollTo('leasing')">Explore Luxury Leasing</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     DINING
+═══════════════════════════════════════════ -->
+<section id="dining" class="section-pad">
+  <div class="container">
+    <div class="split-layout reverse">
+      <div class="split-image reveal-left">
+        <div class="img-frame">
+          <img src="assets/fine-dining.jpg" alt="Fine dining" loading="lazy" />
+        </div>
+      </div>
+      <div class="split-text reveal-right">
+        <p class="eyebrow">Dining & Lifestyle</p>
+        <h2>Dining as a <em>Destination</em></h2>
+        <p class="section-desc">50+ restaurants — from celebrity chef concepts to fast-casual crowd favorites. The culinary offering is a destination draw in itself, extending dwell time and spend per visit.</p>
+        <div class="pill-row">
+          <span class="pill">Fine Dining</span>
+          <span class="pill">Fast Casual</span>
+          <span class="pill">Celebrity Chef</span>
+          <span class="pill">International</span>
+          <span class="pill">Bars & Lounges</span>
+        </div>
+        <div class="dining-quote">
+          <p>"The food hall alone drives repeat visits from locals who never needed to buy anything."</p>
+          <span>— MOA Leasing Team</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ENTERTAINMENT
+═══════════════════════════════════════════ -->
+<section id="entertainment" class="section-pad alt-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Attractions & Entertainment</p>
+      <h2>Beyond <em>Shopping</em></h2>
+      <p class="section-desc">This is the moat. No other retail property on earth can claim an indoor theme park, a world-class aquarium, and a flight simulation ride — all under one roof.</p>
+    </div>
+
+    <div class="ent-grid">
+      <div class="ent-card ent-card-big reveal">
+        <img src="assets/theme-park.jpg" alt="Theme park" loading="lazy" />
+        <div class="ent-card-body">
+          <p class="ent-tag">The Crown Jewel</p>
+          <h3>Nickelodeon Universe</h3>
+          <p>The nation's largest indoor theme park. 7 acres. 27 rides. Families plan entire trips to Minnesota just for this.</p>
+          <div class="ent-meta">
+            <span>7 acres</span>
+            <span>·</span>
+            <span>27 rides</span>
+            <span>·</span>
+            <span>Indoor</span>
+          </div>
+        </div>
+      </div>
+      <div class="ent-col">
+        <div class="ent-card reveal">
+          <img src="assets/aquarium.jpg" alt="Aquarium" loading="lazy" />
+          <div class="ent-card-body">
+            <h3>SEA LIFE Minnesota Aquarium</h3>
+            <p>1.2 million gallon ocean tunnel. One of the largest aquariums in the Midwest.</p>
+          </div>
+        </div>
+        <div class="ent-card reveal">
+          <img src="assets/experience.jpg" alt="Experience" loading="lazy" />
+          <div class="ent-card-body">
+            <h3>FlyOver America</h3>
+            <p>A soaring flight simulation ride above the American landscape. One-of-a-kind experiential attraction.</p>
+          </div>
+        </div>
+        <div class="ent-card reveal">
+          <img src="assets/crayola-experience.jpg" alt="Crayola Experience" loading="lazy" />
+          <div class="ent-card-body">
+            <h3>Crayola Experience</h3>
+            <p>Interactive creative play destination. 25+ hands-on activities for families.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EVENTS
+═══════════════════════════════════════════ -->
+<section id="events" class="section-pad events-section">
+  <div class="events-bg">
+    <img src="assets/concert-event.jpg" alt="Concert event" loading="lazy" />
+    <div class="events-overlay"></div>
+  </div>
+  <div class="container events-content">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-light">Events & Platform</p>
+      <h2>A Stage for <em>Everything</em></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65)">Mall of America isn't a venue — it's a platform. 400+ events a year make it the most active commercial property in North America.</p>
+    </div>
+
+    <div class="events-grid">
+      <div class="ev-card reveal">
+        <div class="ev-n">100+</div>
+        <div class="ev-title">Concerts & Live Music</div>
+        <div class="ev-desc">Annual performances from chart-topping and emerging artists across multiple stages.</div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-n">200+</div>
+        <div class="ev-title">Brand Activations</div>
+        <div class="ev-desc">Pop-up experiences, product launches, and immersive brand installations with 40M+ annual impressions.</div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-n">50+</div>
+        <div class="ev-title">Corporate Events</div>
+        <div class="ev-desc">Conferences, galas, product reveals, and private receptions in dedicated venue spaces.</div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-n">75+</div>
+        <div class="ev-title">Celebrity Appearances</div>
+        <div class="ev-desc">Meet-and-greets, press events, and cultural moments that generate national media coverage.</div>
+      </div>
+    </div>
+
+    <div class="events-cta reveal">
+      <button class="btn-gold" onclick="scrollTo('contact')">Book Your Event</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LEASING MODULE (Phase 2)
+═══════════════════════════════════════════ -->
+<section id="leasing" class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Leasing Explorer</p>
+      <h2>Find Your <em>Space</em></h2>
+      <p class="section-desc">Every brand has a home here. Filter by category to see your tailored opportunity.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="lease-filters reveal">
+      <button class="lf-btn active" data-filter="all">All Opportunities</button>
+      <button class="lf-btn" data-filter="luxury">Luxury & Premium</button>
+      <button class="lf-btn" data-filter="flagship">Flagship Retail</button>
+      <button class="lf-btn" data-filter="fb">Food & Beverage</button>
+      <button class="lf-btn" data-filter="popup">Pop-Up & Kiosk</button>
+    </div>
+
+    <!-- Leasing cards -->
+    <div class="lease-grid" id="leaseGrid">
+
+      <div class="lease-card reveal" data-category="luxury">
+        <div class="lc-img">
+          <img src="assets/luxury-fashion.jpg" alt="Luxury space" loading="lazy" />
+          <span class="lc-badge lc-badge-gold">Luxury Wing</span>
+        </div>
+        <div class="lc-body">
+          <h3>Luxury Corridor</h3>
+          <p>Curated adjacencies alongside Tiffany, Coach, and global luxury houses. Minimum 2,000 sq ft. Clientele with demonstrated high-spend intent.</p>
+          <div class="lc-specs">
+            <span>2,000–8,000 sq ft</span>
+            <span>Floor 1 — South</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+      <div class="lease-card reveal" data-category="flagship">
+        <div class="lc-img">
+          <img src="assets/flagship-store.jpg" alt="Flagship store" loading="lazy" />
+          <span class="lc-badge">Flagship</span>
+        </div>
+        <div class="lc-body">
+          <h3>Flagship Destination</h3>
+          <p>High-visibility flagship footprints across all three floors. Anchor-adjacent positioning available for the right brand partner.</p>
+          <div class="lc-specs">
+            <span>5,000–25,000 sq ft</span>
+            <span>All floors</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+      <div class="lease-card reveal" data-category="fb">
+        <div class="lc-img">
+          <img src="assets/restaurant.jpg" alt="Restaurant" loading="lazy" />
+          <span class="lc-badge">F&B</span>
+        </div>
+        <div class="lc-body">
+          <h3>Restaurant & Bar</h3>
+          <p>Full-service restaurant and bar opportunities across dining clusters. 3.4-hour average dwell time means repeat covers and extended service windows.</p>
+          <div class="lc-specs">
+            <span>1,500–6,000 sq ft</span>
+            <span>Dining Court & Level 3</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+      <div class="lease-card reveal" data-category="popup">
+        <div class="lc-img">
+          <img src="assets/pop-up.jpg" alt="Pop-up" loading="lazy" />
+          <span class="lc-badge lc-badge-green">Pop-Up</span>
+        </div>
+        <div class="lc-body">
+          <h3>Pop-Up & Kiosk</h3>
+          <p>Short-term pop-up spaces from 500 sq ft in premium high-traffic corridors. Perfect for product launches, seasonal campaigns, or testing at scale.</p>
+          <div class="lc-specs">
+            <span>500–2,000 sq ft</span>
+            <span>All floors · flexible term</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+      <div class="lease-card reveal" data-category="flagship">
+        <div class="lc-img">
+          <img src="assets/specialty-retail.jpg" alt="Specialty retail" loading="lazy" />
+          <span class="lc-badge">Specialty</span>
+        </div>
+        <div class="lc-body">
+          <h3>Specialty Retail</h3>
+          <p>Mid-size specialty formats in category-clustered neighborhoods — tech, home, beauty, sport. Proven adjacencies drive cross-shopping and basket size.</p>
+          <div class="lc-specs">
+            <span>1,000–5,000 sq ft</span>
+            <span>Category clusters</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+      <div class="lease-card reveal" data-category="luxury">
+        <div class="lc-img">
+          <img src="assets/beauty-luxury.jpg" alt="Beauty luxury" loading="lazy" />
+          <span class="lc-badge lc-badge-gold">Luxury Wing</span>
+        </div>
+        <div class="lc-body">
+          <h3>Premium Beauty & Wellness</h3>
+          <p>Dedicated beauty corridor with premium positioning. Sephora and Ulta footprints available alongside emerging prestige beauty brands.</p>
+          <div class="lc-specs">
+            <span>1,500–4,000 sq ft</span>
+            <span>Floor 1 — Beauty Hall</span>
+          </div>
+          <button class="lc-cta" onclick="scrollTo('contact')">Inquire →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT / CTA
+═══════════════════════════════════════════ -->
+<section id="contact" class="section-pad alt-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Partner With Us</p>
+      <h2>Your Brand <em>Belongs Here</em></h2>
+      <p class="section-desc">Whether you're a global brand or an emerging concept, no other property delivers this scale of audience, diversity of opportunity, or depth of commercial infrastructure.</p>
+    </div>
+
+    <div class="partner-grid">
+      <div class="partner-card reveal" onclick="scrollTo('leasing')">
+        <div class="pc-icon">🏪</div>
+        <h3>Retail Leasing</h3>
+        <p>Flagship, pop-up, luxury, F&B — find your space and your audience.</p>
+        <span class="pc-link">Explore spaces →</span>
+      </div>
+      <div class="partner-card reveal">
+        <div class="pc-icon">🤝</div>
+        <h3>Brand Sponsorship</h3>
+        <p>Naming rights, experiential activations, digital placements — 40M+ impressions annually.</p>
+        <span class="pc-link">Get in touch →</span>
+      </div>
+      <div class="partner-card reveal">
+        <div class="pc-icon">🎤</div>
+        <h3>Event Booking</h3>
+        <p>Concerts, product launches, galas, conventions. The venue and audience are ready.</p>
+        <span class="pc-link">Book a venue →</span>
+      </div>
+      <div class="partner-card reveal">
+        <div class="pc-icon">🏟️</div>
+        <h3>Venue Partnerships</h3>
+        <p>Performing arts center, expo halls, custom-built spaces for long-term anchor partnerships.</p>
+        <span class="pc-link">Learn more →</span>
+      </div>
+    </div>
+
+    <div class="cta-strip reveal">
+      <div class="cta-text">
+        <h3>Ready to make your move?</h3>
+        <p>Connect with our commercial team to explore leasing, sponsorship, and event opportunities.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:leasing@mallofamerica.com" class="btn-primary">Contact Leasing</a>
+        <a href="mailto:events@mallofamerica.com" class="btn-ghost">Events Inquiry
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-moa">MOA</span>
+      <span class="footer-name">Mall of America</span>
+    </div>
+    <p class="footer-loc">Bloomington, Minnesota · The Largest Mall in North America</p>
+    <p class="footer-copy">© 2025 Mall of America. Screening project — not an official MOA asset.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
